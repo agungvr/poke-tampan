@@ -1,7 +1,6 @@
 import { createGlobalStyle } from 'styled-components';
 
 const GlobalCSS = createGlobalStyle`
-  @import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap');
   
   *,
   *::before,
@@ -53,6 +52,10 @@ const GlobalCSS = createGlobalStyle`
     outline: 0 !important;
   }
  
+  #app {
+    width: 100%;
+  }
+
 `;
 
 export default GlobalCSS;

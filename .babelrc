@@ -19,7 +19,7 @@
       {
         "root": ["./src"],
         "alias": {
-          "@tampan/data": "./src/data",
+          "@tampan/components": "./src/components",
           "@tampan/graph-query": "./src/graph-query",
           "@tampan/hoc": "./src/hoc",
           "@tampan/hooks": "./src/hooks",

@@ -44,18 +44,11 @@ module.exports = {
         ],
       },
       {
-        test: [/\.bmp$/, /\.gif$/, /\.jpe?g$/, /\.png$/],
-        loader: require.resolve('url-loader'),
-        options: {
-          limit: 10000,
-          name: 'static/media/image/[ext]/[name].[ext]',
-        },
-      },
-      {
-        test: /\.svg$/,
+        test: [/\.bmp$/, /\.gif$/, /\.jpe?g$/, /\.png$/, /\.svg$/],
         loader: 'file-loader',
         options: {
-          name: 'static/media/image/svg/[name].[ext]',
+          name: 'static/media/image/[ext]/[name].[ext]',
+          esModule: false,
         },
       },
       {
@@ -76,6 +69,7 @@ module.exports = {
     extensions: ['*', '.js', '.jsx'],
     modules: [path.resolve(__dirname, '../src'), 'node_modules'],
     alias: {
+      '@tampan/components': path.join(__dirname, '../src/components'),
       '@tampan/img': path.join(__dirname, '../src/assets/images'),
       '@tampan/graph-query': path.join(
         __dirname,
