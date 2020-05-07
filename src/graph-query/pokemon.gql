@@ -1,0 +1,33 @@
+query GetAllPokemons($first: Int!) {
+  pokemons(first: $first) {
+    id
+    number
+    name
+    types
+    image
+  }
+}
+
+query GetPokemon($name: String!) {
+  pokemon(name: $name) {
+    id
+    number
+    name
+    types
+    image
+    attacks {
+      special {
+        name
+        type
+        damage
+      }
+    }
+    evolutions {
+      id
+      number
+      name
+      types
+      image
+    }
+  }
+}

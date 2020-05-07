@@ -1,6 +1,13 @@
 import React, { useEffect } from 'react';
-import Pages from './pages';
+import ApolloClient from 'apollo-boost';
+import { ApolloProvider } from '@apollo/react-hooks';
+import Pages from '@tampan/pages';
+import { BASE_URL } from '@tampan/utils/constants';
 import GlobalStyles from './assets/styles';
+
+const client = new ApolloClient({
+  uri: BASE_URL,
+});
 
 function Root() {
   useEffect(() => {
@@ -8,10 +15,10 @@ function Root() {
     element.remove();
   }, []);
   return (
-    <>
+    <ApolloProvider client={client}>
       <Pages />
       <GlobalStyles />
-    </>
+    </ApolloProvider>
   );
 }
 Root.whyDidYouRender = true;
