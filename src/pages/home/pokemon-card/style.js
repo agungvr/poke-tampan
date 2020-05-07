@@ -19,6 +19,7 @@ Card.Title = styled.span`
   font-size: medium;
   font-weight: 600;
   margin: 0px 0px 12px;
+  z-index: 1;
 `;
 
 Card.Label = styled.div`
@@ -28,8 +29,8 @@ Card.Label = styled.div`
   width: fit-content;
   font-size: x-small;
   color: white;
-
   margin: 0px 0px 8px;
+  z-index: 1;
 `;
 
 Card.Image = styled.img`
@@ -50,6 +51,7 @@ Card.Background = styled.div`
   position: absolute;
   top: -63px;
   left: -46px;
+  z-index: 1;
 `;
 
 Card.Info = styled.div`
