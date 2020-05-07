@@ -20,5 +20,6 @@ const MainLayout = ({ children }) => {
     </>
   );
 };
+MainLayout.whyDidYouRender = true;
 
 export default MainLayout;

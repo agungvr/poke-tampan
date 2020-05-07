@@ -1,19 +1,22 @@
 import React from 'react';
 import { useQuery } from '@apollo/react-hooks';
 import { GetAllPokemons } from '@tampan/graph-query/pokemon.gql';
+import PokemonList from './pokemon-list';
+import { Container } from './style';
 
 const HomePage = () => {
-  const { loading, error, data } = useQuery(GetAllPokemons, {
+  const { loading, data } = useQuery(GetAllPokemons, {
     variables: {
-      first: 10,
+      first: 20,
       name: '',
     },
   });
+  const pokemons = data?.pokemons || [];
 
   return (
-    <div>
-      <span>Home Page</span>
-    </div>
+    <Container>
+      <PokemonList loading={loading} data={pokemons} />
+    </Container>
   );
 };
 HomePage.whyDidYouRender = true;

@@ -22,6 +22,7 @@ const MainRoute = ({ component: Component, ...rest }) => {
     />
   );
 };
+MainRoute.whyDidYouRender = true;
 
 function Pages() {
   return (
