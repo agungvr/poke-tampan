@@ -1,7 +1,7 @@
-import React from 'react';
+import React, { memo } from 'react';
 import { Card } from './style';
 
-const PokemonCard = ({ data }) => {
+const PokemonCard = memo(({ data }) => {
   return (
     <Card>
       <Card.Background />
@@ -13,7 +13,7 @@ const PokemonCard = ({ data }) => {
       <Card.Info>{data.number}</Card.Info>
     </Card>
   );
-};
+});
 PokemonCard.whyDidYouRender = true;
 
 export default PokemonCard;

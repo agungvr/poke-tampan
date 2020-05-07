@@ -34,10 +34,12 @@ Card.Label = styled.div`
 
 Card.Image = styled.img`
   width: auto;
+  max-width: 136px;
   height: 120px;
   position: absolute;
   bottom: -12px;
   right: 12px;
+  object-fit: contain;
 `;
 
 Card.Background = styled.div`
