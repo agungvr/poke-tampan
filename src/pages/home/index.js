@@ -71,8 +71,8 @@ const HomePage = () => {
     return [];
   }, [data, isFilter, pokemonByTypes]);
 
-  const types = useMemo(
-    () => (pokemonByTypes ? Object.keys(pokemonByTypes) : null),
+  const types = useCallback(
+    pokemonByTypes ? Object.keys(pokemonByTypes) : null,
     [pokemonByTypes]
   );
 

@@ -5,7 +5,8 @@ const useInfiniteScroll = () => {
   const isScrolling = () => {
     if (
       window.innerHeight + document.documentElement.scrollTop !==
-      document.documentElement.offsetHeight
+        document.documentElement.offsetHeight &&
+      !isFetchingMore
     ) {
       return;
     }

@@ -4,6 +4,19 @@ import Spinner from '@tampan/components/spinner';
 import PokemonCard from '../pokemon-card';
 import PokemonListLoading from './loading';
 
+const LoadMoreLoading = memo(() => {
+  return (
+    <Column
+      display="flex"
+      justify="center"
+      align="center"
+      padding="16px"
+    >
+      <Spinner />
+    </Column>
+  );
+});
+
 const PokemonList = memo(
   ({ loading, data, error, isFetchingMore }) => {
     if (loading) return <PokemonListLoading />;
@@ -24,18 +37,15 @@ const PokemonList = memo(
           </Column>
         ))}
 
-        {isFetchingMore && (
-          <Column
-            display="flex"
-            justify="center"
-            align="center"
-            padding="16px"
-          >
-            <Spinner />
-          </Column>
-        )}
+        {isFetchingMore && <LoadMoreLoading />}
       </Row>
     );
+  },
+  (prev, next) => {
+    if (JSON.stringify(prev) === JSON.stringify(next)) {
+      return true;
+    }
+    return false;
   }
 );
 PokemonList.whyDidYouRender = true;

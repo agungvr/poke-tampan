@@ -26,4 +26,9 @@ const Filter = ({ data, onChange }) => {
 };
 Filter.whyDidYouRender = true;
 
-export default memo(Filter);
+export default memo(Filter, (prev, next) => {
+  if (JSON.stringify(prev) === JSON.stringify(next)) {
+    return true;
+  }
+  return false;
+});
