@@ -86,7 +86,7 @@ const BasicModal = ({
         <Wrapper
           margin={marginContent}
           padding="8px 0px 0px"
-          align="start"
+          justify="flex-start"
         >
           {children}
         </Wrapper>
